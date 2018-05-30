@@ -3,16 +3,35 @@ import PropTypes from 'prop-types'
 
 const Todo = ({ onClick, completed, text }) => (
   <li
-    onClick={onClick}
     style={{
-      textDecoration: completed ? 'line-through' : 'none',
-      color: completed ? '#ccc' : '#000',
       background: completed ? '#222' : 'cornsilk'
     }}
   >
-    <p>{text}</p>
-  </li>
+    <p
+      style={{
+      color: completed ? '#ccc' : '#000',
+      textDecoration: completed ? 'line-through' : 'none',
+      }}
+    >{text}</p>
+    <div
+      className="flex--button"
+    >
+    <button
+      onClick={onClick}
+      className="btn btn-outline-success"
+    >
+      Ok  
+    </button>    
+    <button
+      className="btn btn-outline-danger"
+    >
+      Delete  
+    </button>    
+    </div>
+  </li>, 
+  
 )
+
 
 Todo.propTypes = {
   onClick: PropTypes.func.isRequired,

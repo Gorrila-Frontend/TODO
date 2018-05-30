@@ -41,7 +41,19 @@ li{
     font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
     word-wrap: break-word;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
 }
 span {
     margin-left: 60px;
+}
+.flex--button{
+    display: flex;
+}
+.btn-outline-danger, .btn-outline-success {
+    position: relative;
+    display: block;
+    top: 60%;
+    margin: 0 auto;
 }
