@@ -28,9 +28,9 @@ const Todo = ({ onClick, completed, text }) => (
       Delete  
     </button>    
     </div>
-  </li>, 
-  
+  </li>
 )
+  
 
 
 Todo.propTypes = {
