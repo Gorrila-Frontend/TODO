@@ -1,15 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap'
 
-const Todo = ({ onClick, completed, text }) => (
-  <li
+const Todo = ({  onClick,onSubmit, completed, text }) => (
+  <ListGroupItem
+    color="info"
     style={{
-      background: completed ? '#222' : 'cornsilk'
+
+      opacity: completed ? '0.2' : '1'
     }}
   >
     <p
       style={{
-      color: completed ? '#ccc' : '#000',
+
       textDecoration: completed ? 'line-through' : 'none',
       }}
     >{text}</p>
@@ -20,17 +23,19 @@ const Todo = ({ onClick, completed, text }) => (
       onClick={onClick}
       className="btn btn-outline-success"
     >
-      Ok  
-    </button>    
+      Ok
+    </button>
     <button
       className="btn btn-outline-danger"
+      onClick={onSubmit}
+
     >
-      Delete  
-    </button>    
+      Delete
+    </button>
     </div>
-  </li>
+  </ListGroupItem>
 )
-  
+
 
 
 Todo.propTypes = {

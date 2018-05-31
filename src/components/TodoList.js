@@ -2,16 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
 import '../index.css';
-const TodoList = ({ props,todos, toggleTodo }) => (
-  <ul className="ulList">
+import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap'
+
+const TodoList = ({ props,todos, toggleTodo, deleteTodo }) => (
+  <ListGroup className="ulList">
     {todos.map(todo =>
       <Todo
         key={todo.id}
         {...todo}
         onClick={() => toggleTodo(todo.id)}
+        onSubmit={() => deleteTodo(todo.id)}
+
       />
     )}
-  </ul>
+  </ListGroup>
 )
 
 TodoList.propTypes = {
